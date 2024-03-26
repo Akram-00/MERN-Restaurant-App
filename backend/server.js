@@ -10,7 +10,9 @@ require("dotenv").config();
 connectDatabase();
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin:"https://improved-guide-9r4qg66rpg53xrj9-3000.app.github.dev"
+}));
 
 readdirSync("./routes").map((r) => {
   app.use("/api", require(`./routes/${r}`));
